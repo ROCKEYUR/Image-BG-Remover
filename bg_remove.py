@@ -6,12 +6,12 @@ import base64
 
 st.set_page_config(layout="wide", page_title="Image Background")
 
-st.write("## Remove Background from your Image")
+st.write("## Remove Background from your Image ##")
 st.write(
     "Try uploading an image to watch the background removed quickly"
 )
 
-st.sidebar.write("## upload and Download :gear:")
+st.sidebar.write("## Upload and Download :gear:")
 
 MAX_FILE_SIZE = 5*1024*1024 #5mb
 
@@ -28,10 +28,10 @@ def fix_Image(upload):
     col1.image(image)
 
     fixed = remove(image)
-    col2.write("Fixed Image :wrench:")
+    col2.write("New Image :wrench:")
     col2.image(fixed)
     st.sidebar.markdown("\n")
-    st.sidebar.download_button("Download fixed image", convert_image(fixed), "fixed.png", "image/png")
+    st.sidebar.download_button("Download New image", convert_image(fixed), "new.png", "image/png")
 
 col1, col2 = st.columns(2)
 my_upload = st.sidebar.file_uploader("Upload an Image", type=["png","jpg","jpeg"])
